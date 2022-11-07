@@ -10,7 +10,7 @@ const AddTask = ({
   return (
     <div className="inputsWrapper">
       <h1>ToDo</h1>
-      <label>
+      <div>
         <input
           className="textInput"
           name="inputTextValue"
@@ -19,17 +19,17 @@ const AddTask = ({
           placeholder="Dodaj zadanie"
           value={textValue}
         />
-      </label>
-      <input
-        className="inputCheckbox"
-        type="checkbox"
-        name="checkboxValue"
-        onChange={handleOnChange}
-        checked={checkboxValue}
-        value={checkboxValue}
-      />
-      Priorytet
-      <label>
+        <input
+          className="inputCheckbox"
+          type="checkbox"
+          name="checkboxValue"
+          onChange={handleOnChange}
+          checked={checkboxValue}
+          value={checkboxValue}
+        />
+        Priorytet
+      </div>
+      <div>
         Do kiedy zrobić:
         <input
           className="dateInput"
@@ -38,7 +38,7 @@ const AddTask = ({
           type="date"
           value={dateValue}
         />
-      </label>
+      </div>
       <button className="addTaskBtn" onClick={addTask}>
         Dodaj zadanie
       </button>

@@ -8,16 +8,15 @@ class ToDoApp extends Component {
   state = {
     inputTextValue: "",
     inputDateValue: "",
-    checkboxValue: true,
+    checkboxValue: false,
     tasksLength: "",
   };
   handleOnChange = (e) => {
     console.log(e.target.name);
     console.log(e.target.checked);
     if (e.target.name === "checkboxValue") {
-      const value = e.target.checked === true ? true : false;
       this.setState({
-        checkboxValue: value,
+        [e.target.name]: e.target.checked,
       });
     }
     this.setState({
@@ -69,6 +68,7 @@ class ToDoApp extends Component {
         id={index}
         taskText={task.taskText}
         taskDate={task.taskDate}
+        tasksDoneLength={this.tasksDone.length}
       />
     ));
     return (
@@ -85,9 +85,11 @@ class ToDoApp extends Component {
           {this.tasks.length === 0 ? null : tasks}
         </div>
         {this.tasksDone.length === 0 ? null : (
-          <h3>Zadania wykonane {this.tasksDone.length}</h3>
+          <div className="tasksWrapper">
+            <h3>Zadania wykonane {tasksDone.length}</h3>
+            {tasksDone}
+          </div>
         )}
-        {this.tasksDone.length === 0 ? null : tasksDone}
       </>
     );
   }

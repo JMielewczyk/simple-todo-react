@@ -12,10 +12,7 @@ const TasksToDo = ({
     <>
       <div className="singleTaskWrapper">
         <p className="taskToDoText">
-          <strong style={checkboxValue === true ? "color:red" : null}>
-            {taskText}
-          </strong>{" "}
-          - do {taskDate}
+          <strong>{taskText}</strong> - do {taskDate}
         </p>
         <button className="taskDoneBtn" onClick={() => taskDone(id)}>
           Zadanie wykonane
