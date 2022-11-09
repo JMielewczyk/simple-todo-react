@@ -1,0 +1,22 @@
+.startPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.startPage h1 {
+    font-size: 24px;
+}
+
+.article-title {
+    font-size: 22px;
+}
+
+.article-author {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.article-content {
+    margin-top: 15px;
+}
